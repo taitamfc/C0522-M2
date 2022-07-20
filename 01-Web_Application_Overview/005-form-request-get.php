@@ -1,11 +1,11 @@
 <?php
     echo '<pre>';
-    print_r($_GET);
+    print_r($_REQUEST);
     echo '</pre>';
 
-    if( isset( $_GET['username'] ) && isset( $_GET['password'] ) ){
-        $username = $_GET['username'];
-        $password = $_GET['password'];
+    if( isset( $_REQUEST['username'] ) && isset( $_REQUEST['password'] ) ){
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
     
         echo 'Ten dang nhap la: ' . $username;
         echo '<br>';

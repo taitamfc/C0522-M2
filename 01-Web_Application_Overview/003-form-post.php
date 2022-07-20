@@ -1,18 +1,17 @@
 <?php
     echo '<pre>';
-    print_r($_GET);
+    print_r($_POST);
+    print_r($_SERVER['REQUEST_METHOD']);//GET || POST
     echo '</pre>';
 
-    if( isset( $_GET['username'] ) && isset( $_GET['password'] ) ){
-        $username = $_GET['username'];
-        $password = $_GET['password'];
+    if( $_SERVER['REQUEST_METHOD'] == "POST" ){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
     
         echo 'Ten dang nhap la: ' . $username;
         echo '<br>';
         echo 'Mat khau la: ' . $password;
     }
-
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +22,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="" method="post">
         Username: <input type="text" name="username" id=""> <br>
         Password: <input type="password" name="password" id=""> <br>
         <input type="submit" value="Login">
