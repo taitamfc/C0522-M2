@@ -3,10 +3,28 @@
 include 'helper.php';
 include 'models/Model.php';
 
-include 'controllers/ProductController.php';
-$objController = new ProductController();
+//index.php?controller=Product&page=create
+//index.php?controller=User&page=create
 
-$page = ( isset($_REQUEST['page']) ) ? $_REQUEST['page'] : 'index';
+$controller = ( isset($_REQUEST['controller']) ) ? $_REQUEST['controller'] : 'Product';
+$page       = ( isset($_REQUEST['page']) ) ? $_REQUEST['page'] : 'index';
+
+//gọi controller tùy thuộc vào url
+switch ($controller) {
+    case 'Product':
+        include 'controllers/ProductController.php';
+        $objController = new ProductController();
+        break;
+    case 'User':
+        include 'controllers/UserController.php';
+        $objController = new UserController();
+        break;
+    default:
+        # code...
+        break;
+}
+
+//gọi action tùy thuộc vào url
 
 switch ($page) {
     case 'index':
