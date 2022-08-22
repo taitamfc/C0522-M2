@@ -4,6 +4,7 @@ include 'helper.php';
 include 'models/Model.php';
 
 //index.php?controller=Product&page=create
+//Controller: Product + Page: create
 //index.php?controller=User&page=create
 
 $controller = ( isset($_REQUEST['controller']) ) ? $_REQUEST['controller'] : 'Product';

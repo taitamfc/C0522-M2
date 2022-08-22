@@ -22,6 +22,20 @@ class ProductController {
     //trang them moi
     public function create(){
         echo __METHOD__;
+        if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
+            $data = [
+                'TENHANG' => $_REQUEST['TENHANG'],
+                'MACONGTY' => $_REQUEST['MACONGTY'],
+            ];
+            $productModel = new ProductModel();
+            $productModel->save($data);
+
+            //chuyển hướng
+            header("Location: index.php?controller=Product&page=index");
+
+        }
+
+        include_once 'views/products/create.php';
 
     }
 

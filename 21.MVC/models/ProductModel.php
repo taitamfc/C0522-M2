@@ -3,8 +3,6 @@ class ProductModel extends Model {
 
     //lay tat ca
     public function getAll(){
-        
-
         $sql = "SELECT * FROM c10_mat_hang";
         // fetchAll
         $stmt = $this->conn->query($sql);
@@ -26,7 +24,21 @@ class ProductModel extends Model {
 
     //them
     public function save($data){
+        $TENHANG = $data['TENHANG'];
+        $MACONGTY = $data['MACONGTY'];
+
+        $MALOAIHANG = 1;
+        $SOLUONG    = 100;
+        $DONVITINH  = 'chiec';
+        $GIAHANG    = 10000;
+
+        $sql = "INSERT INTO `c10_mat_hang` 
+                (`TENHANG`, `MACONGTY`, `MALOAIHANG`, `SOLUONG`, `DONVITINH`, `GIAHANG`) 
+                VALUES 
+                ('$TENHANG', $MACONGTY, $MALOAIHANG, $SOLUONG, '$DONVITINH', $GIAHANG)";
+
         // exec
+        $this->conn->exec($sql);
     }
 
     //sua
