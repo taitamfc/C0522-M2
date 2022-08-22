@@ -8,14 +8,60 @@ use GioLinh\Tam as TamGioLinh;
 $taiTam = new Tam();
 $phongTam = new TamGioLinh();
 
-$taiTam_1 = new DongHa\Tam();
-$phongTam_1 = new GioLinh\Tam();
+$tam_1 = new DongHa\Tam();
+$tam_2 = new GioLinh\Tam();
 
-echo '<pre>';
-print_r($taiTam);
-print_r($phongTam);
 
-echo '<hr>';
 
-print_r($taiTam_1);
-print_r($phongTam_1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if( $tam_1 instanceof DongHa\Tam ){
+    $tam_1->nghiatrangduong9();
+}
+if( $tam_1 instanceof GioLinh\Tam ){
+    $tam_1->docmieu();
+}
